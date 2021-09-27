@@ -53,47 +53,7 @@
 				</configuration>
 			</plugin>
 
-			<!-- Enable Liberty Maven plugin -->
-			<plugin>
-				<groupId>net.wasdev.wlp.maven.plugins</groupId>
-				<artifactId>liberty-maven-plugin</artifactId>
-				<version>2.6.4</version>
-				<configuration>
-					<serverName>${project.artifactId}</serverName>
-					<assemblyArtifact>
-						<groupId>com.ibm.websphere.appserver.runtime</groupId>
-						<artifactId>wlp-kernel</artifactId>
-						<version>21.0.0.3</version>
-						<type>zip</type>
-					</assemblyArtifact>
-					<appDeployName>${project.artifactId}.${project.packaging}</appDeployName>
-				</configuration>
-				<executions>
-					<execution>
-						<id>start-server</id>
-						<phase>pre-integration-test</phase>
-						<goals>
-							<goal>start-server</goal>
-						</goals>
-						<configuration>
-							<verifyTimeout>60</verifyTimeout>
-						</configuration>
-					</execution>
-					<execution>
-						<id>install-apps</id>
-						<phase>pre-integration-test</phase>
-						<goals>
-							<goal>install-apps</goal>
-						</goals>
-						<configuration>
-							<appsDirectory>apps</appsDirectory>
-							<installAppPackages>project</installAppPackages>
-						</configuration>
-					</execution>
-				</executions>
 
-			</plugin>
-			<!-- End of Liberty Maven plugin -->
 		</plugins>
 	</build>
 
