@@ -1,5 +1,5 @@
 steps:
 - name: 'ubuntu'
   args: ['echo', 'hello world']
-- name: 'maven'
+- name: 'maven:3-ibmjava-8'
   args: ['mvn', 'clean']
